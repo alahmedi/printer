@@ -1,0 +1,22 @@
+#!/bin/bash
+
+word=$1
+
+if [[ "$2" == "" ]]; then
+	time="0.1"
+	echo "printer: WARNING: no time passed. going with 0.1s."
+	sleep 1
+else
+	time="$2"
+fi
+
+if [[ "$1" == "" ]]; then
+	echo "printer: no word passed"
+else
+	clear
+	
+	while true; do
+		echo -ne "$word "
+		sleep $time
+	done
+fi
